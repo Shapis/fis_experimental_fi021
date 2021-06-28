@@ -3,9 +3,8 @@
 
 int main()
 {
-
     int sequenciaLength;
-    float media, incertezaMedida, incertezaMedia;
+    float media, incertezaMedida, incertezaMedia, incertezaInstrumental, incertezaTotalMedida, incertezaTotalMedia;
 
     printf("Digite a quantidade de medidas que voce tem:\n");
     scanf("%d", &sequenciaLength);
@@ -30,6 +29,16 @@ int main()
     incertezaMedia = incertezaMedida / sqrt(sequenciaLength);
 
     printf("A media das medidas: %f\nA incerteza da medida: %f\nA incerteza da media: %f\n", media, incertezaMedida, incertezaMedia);
+
+    printf("Digite a incerteza instrumental. See nao tiver digite ela digite 0\n");
+
+    scanf("%f", &incertezaInstrumental);
+
+    incertezaTotalMedida = sqrt(pow(incertezaMedida, 2) + pow(incertezaInstrumental, 2));
+    incertezaTotalMedia = sqrt(pow(incertezaMedia, 2) + pow(incertezaInstrumental, 2));
+    printf("A incerteza instrumental eh: %f\nA incerteza total da medida: %f\nA incerteza total da media: %f\n", incertezaInstrumental, incertezaTotalMedida, incertezaTotalMedia);
+
+    printf("Programa concluido com sucesso!\n");
 
     return 0;
 }

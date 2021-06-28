@@ -15,6 +15,7 @@ int main()
 
     for (size_t i = 0; i < sequenciaLength; i++)
     {
+        printf("Medida %d: ", i + 1);
         scanf("%f", &sequencia[i]);
     }
 
